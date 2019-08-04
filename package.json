@@ -9,6 +9,7 @@
     "build": "next build",
     "postbuild": "mkdir -p ./public/_next && mv -v ./functions/next/static ./public/_next/static",
     "start": "next start",
+    "predeploy": "npm run build",
     "deploy": "firebase deploy --only hosting && npm --prefix ./functions run deploy"
   },
   "dependencies": {
