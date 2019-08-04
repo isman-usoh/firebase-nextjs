@@ -1,0 +1,21 @@
+{
+  "name": "firebase-nextjs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "next",
+    "prebuild": "rm -rf ./functions/next && rm -rf ./public/_next",
+    "build": "next build",
+    "postbuild": "mkdir -p ./public/_next && mv -v ./functions/next/static ./public/_next/static",
+    "start": "next start",
+    "deploy": "firebase deploy --only hosting && npm --prefix ./functions run deploy"
+  },
+  "dependencies": {
+    "firebase-admin": "^8.3.0",
+    "isomorphic-unfetch": "^3.0.0",
+    "next": "latest",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4"
+  }
+}
